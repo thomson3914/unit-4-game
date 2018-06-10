@@ -1,44 +1,91 @@
+// create variables
 var random_result;
-var lose;
-var win;
+var lost = 0;
+var win = 0;
 var previous = 0;
 
-random_result = Math.floor(Math.random() * 69) + 30;
+// function to reset and start the game
+var resetAndStart = function () {
 
-$("#result").html('Random Result: ' + random_result);
+    // this empties the crystals
+    $(".crystals").empty(); 
 
-for(var i = 0; i < 4; i++){
+    // images for crystals
+    var images = [
+        './assets/images/crystal1.jpg', 
+        './assets/images/crystal2.jpg', 
+        './assets/images/crystal3.jpg', 
+        './assets/images/crystal4.jpg'];
+    
+    // generates new random target number
+    random_result = Math.floor(Math.random() * 69) + 30;
 
-    var random = Math.floor(Math.random() * 11) + 1;
-    // console.log(random);
+    // Add to the DOM
+    $("#result").html('Target Number: ' + random_result);
 
-    var crystal = $("<div>");
-        crystal.attr({
-            "class": 'crystal',
-            "data-random": random
-        });
+    // for loop to create the 4 crystals
+    for(var i = 0; i < 4; i++){
 
-        crystal.html(random);
-        
-    $(".crystals").append(crystal);
+        // generates the crystals random number
+        var random = Math.floor(Math.random() * 11) + 1;
+    
+        // creates the div for ramdom number and put it to this attribute
+        var crystal = $("<div>");
+            crystal.attr({
+                "class": 'crystal',
+                "data-random": random            
+            });
+			crystal.css({
+				"background-image":"url('" + images[i] + "')",
+				"background-size":"cover"
+
+            });
+            
+        // the crystal were we put everything back
+        $(".crystals").append(crystal);
+    }
+
+    $("#previous").html("Total Score: " + previous);
+
 }
 
 
-$(".crystal").on('click', function () {
+
+// reload the page and go through the function above
+resetAndStart();
+
+
+// Event Delegation
+$(document).on('click', ".crystal", function () {
 
    var num = parseInt($(this).attr('data-random'));
 
    previous += num;
 
+   $("#previous").html("Total Score: " + previous);
+
    console.log(previous);
 
+    // if you lose = resetAndStrart
    if(previous > random_result) {
-        console.log("You lost!!");
+        lost++;
+
+        $("#lost").html("Your Losses:  " + lost);
+
+        previous = 0;
+
+        resetAndStart(); 
    }
+
+    // if you win = resetAndStrart
    else if(previous === random_result){
-       console.log("You Win!!");
+       win++;
+
+       $("#win").html("Your Wins:  " + win);
+
+       previous = 0;
+
+       resetAndStart(); 
    }
-
-
 
 });
