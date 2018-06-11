@@ -21,7 +21,7 @@ var resetAndStart = function () {
     random_result = Math.floor(Math.random() * 69) + 30;
 
     // Add to the DOM
-    $("#result").html('Target Number: ' + random_result);
+    $("#result").html(random_result);
 
     // for loop to create the 4 crystals
     for(var i = 0; i < 4; i++){
@@ -45,7 +45,7 @@ var resetAndStart = function () {
         $(".crystals").append(crystal);
     }
 
-    $("#previous").html("Total Score: " + previous);
+    $("#previous").html(previous);
 
 }
 
@@ -62,7 +62,7 @@ $(document).on('click', ".crystal", function () {
 
    previous += num;
 
-   $("#previous").html("Total Score: " + previous);
+   $("#previous").html(previous);
 
    console.log(previous);
 
@@ -70,7 +70,7 @@ $(document).on('click', ".crystal", function () {
    if(previous > random_result) {
         lost++;
 
-        $("#lost").html("Your Losses:  " + lost);
+        $("#lost").html(lost);
 
         previous = 0;
 
@@ -81,7 +81,7 @@ $(document).on('click', ".crystal", function () {
    else if(previous === random_result){
        win++;
 
-       $("#win").html("Your Wins:  " + win);
+       $("#win").html(win);
 
        previous = 0;
 

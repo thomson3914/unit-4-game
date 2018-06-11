@@ -9,19 +9,108 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css"> 
 </head>
 
-<body style="height:2600px">
+<body style="height: 1000px">
 
-    <p id="result"></p>
+<div class="jumbotron">
 
-    <div class="crystals">
+    <div class="row">
+        <div class="col-12">
+            
+            <div class="text-center p-3">
+                <h1>Crystals Collector</h1>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 my-3">
+
+            <!-- Instructions-->
+            <div id="instructions" class="card">
+                <h4 class="card-header" style="text-align: center;">Instructions</h4>
+                <div class="card-body">
+                <div class="text-center">
+                    <p style="text-align: justify;font-size: 16px"> You will be given a target number at the start of the game. By clicking on a crystal below, you will add a specific amount of points to your total score.  You win the game by matching your total score to target number.  You lose the game if your total score goes above the target number.  The value of each crystal is hidden and changes each time a new game starts.</p>
+                </div>
+                </div>
+                <h4 class="card-header" style="text-align: center;">Choose a Crystal</h4>
+            </div>
+
+            <div class="crystals p-3">
+        
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row">
+        <div class="col-12">
+                
+            <div class="text-center">
+                <h4 class="card-header" style="text-align: center;">Results</h4>
+    
+                <!-- Results-->
+                <div class="card-group">
+                    <div id="Results" class="card" style="width: 225px">
+                        <h4 class="card-header" style="text-align: center;">Target</h4>
+                        <div class="card-body">
+                            <div class="text-center">
+                            <p id="result" value="0" style="text-align: center;">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Results" class="card" style="width: 225px">
+                        <h4 class="card-header" style="text-align: center;">Total</h4>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <p id="previous" value="0" style="text-align: center;">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Results" class="card" style="width: 225px">
+                        <h4 class="card-header" style="text-align: center;">Wins</h4>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <p id="win" value="0" style="text-align: center;">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="Results" class="card" style="width: 225px">
+                        <h4 class="card-header" style="text-align: center;">Losses</h4>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <p id="lost" value="0" style="text-align: center;">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+                           
+            </div>
+
+        </div>
 
     </div>
 
-    <p id="previous"></p>
+</div>
 
-    <p id="win"></p>
 
-    <p id="lost"></p>
+
+
+
+
+    <!-- <p id="result"></p> -->
+
+    <!-- <div class="crystals"> -->
+
+    <!-- </div> -->
+
+    <!-- <p id="previous"></p> -->
+
+    <!-- <p id="win"></p> -->
+
+    <!-- <p id="lost"></p> -->
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
