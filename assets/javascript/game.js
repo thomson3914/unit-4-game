@@ -1,8 +1,8 @@
 // create variables
-var random_result;
-var lost = 0;
+var targetNum;
+var loss = 0;
 var win = 0;
-var previous = 0;
+var total = 0;
 
 // function to reset and start the game
 var resetAndStart = function () {
@@ -18,10 +18,10 @@ var resetAndStart = function () {
         './assets/images/crystal4.jpg'];
     
     // generates new random target number
-    random_result = Math.floor(Math.random() * 69) + 30;
+    targetNum = Math.floor(Math.random() * 80) + 40;
 
     // Add to the DOM
-    $("#result").html(random_result);
+    $("#result").html(targetNum);
 
     // for loop to create the 4 crystals
     for(var i = 0; i < 4; i++){
@@ -32,7 +32,7 @@ var resetAndStart = function () {
         // creates the div for ramdom number and put it to this attribute
         var crystal = $("<div>");
             crystal.attr({
-                "class": 'crystal',
+                "class": 'crystal', 
                 "data-random": random            
             });
 			crystal.css({
@@ -41,11 +41,12 @@ var resetAndStart = function () {
 
             });
             
-        // the crystal were we put everything back
+        // the crystal added to the dom
         $(".crystals").append(crystal);
     }
 
-    $("#previous").html(previous);
+    // sets the id total to the variable total
+    $("#total").html(total);
 
 }
 
@@ -60,30 +61,30 @@ $(document).on('click', ".crystal", function () {
 
    var num = parseInt($(this).attr('data-random'));
 
-   previous += num;
+   total += num;
 
-   $("#previous").html(previous);
+   $("#total").html(total);
 
-   console.log(previous);
+   console.log(total);
 
     // if you lose = resetAndStrart
-   if(previous > random_result) {
-        lost++;
+   if(total > targetNum) {
+        loss++;
 
-        $("#lost").html(lost);
+        $("#lost").html(loss);
 
-        previous = 0;
+        total = 0;
 
         resetAndStart(); 
    }
 
     // if you win = resetAndStrart
-   else if(previous === random_result){
+   else if(total === targetNum){
        win++;
 
        $("#win").html(win);
 
-       previous = 0;
+       total = 0;
 
        resetAndStart(); 
    }

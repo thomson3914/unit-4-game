@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Word Guess | Guess the Breed</title>  
+  <title>CRYSTALS COLLECTOR | It's about Math!</title>  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css"> 
@@ -31,28 +31,33 @@
                 <h4 class="card-header" style="text-align: center;">Instructions</h4>
                 <div class="card-body">
                 <div class="text-center">
-                    <p style="text-align: justify;font-size: 16px"> You will be given a target number at the start of the game. By clicking on a crystal below, you will add a specific amount of points to your total score.  You win the game by matching your total score to target number.  You lose the game if your total score goes above the target number.  The value of each crystal is hidden and changes each time a new game starts.</p>
+                    <p style="text-align: justify;font-size: 12px"> You will be given a target number at the start of the game. By clicking on a crystal below, you will add a specific amount of points to your total score.  You win the game by matching your total score to target number.  You lose the game if your total score goes above the target number.  The value of each crystal is hidden and changes each time a new game starts.</p>
                 </div>
                 </div>
-                <h4 class="card-header" style="text-align: center;">Choose a Crystal</h4>
             </div>
 
-            <div class="crystals p-3">
-        
-            </div>
+            <h2 class="card-header" style="text-align: center;">Click on a Crystal</h2>
+
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-12 my-3">
+    
+            <div class="crystals">
+    
+            </div>
+
+        </div>
+    </div>    
     
     
     <div class="row">
         <div class="col-12">
-                
-            <div class="text-center">
-                <h4 class="card p-3" style="text-align: center;">Results</h4>
-    
+                <h2 class="card-header" style="text-align: center;">Results</h2>
                 <!-- Results-->
                 <div class="card-group">
-                    <div id="Results" class="card" style="width: 225px">
+                    <div id="Results" class="card">
                         <h4 class="card-header" style="text-align: center;">Target</h4>
                         <div class="card-body">
                             <div class="text-center">
@@ -60,15 +65,15 @@
                             </div>
                         </div>
                     </div>
-                    <div id="Results" class="card" style="width: 225px">
+                    <div id="Results" class="card">
                         <h4 class="card-header" style="text-align: center;">Total</h4>
                         <div class="card-body">
                             <div class="text-center">
-                                <p id="previous" value="0" style="text-align: center;">0</p>
+                                <p id="total" value="0" style="text-align: center;">0</p>
                             </div>
                         </div>
                     </div>
-                    <div id="Results" class="card" style="width: 225px">
+                    <div id="Results" class="card">
                         <h4 class="card-header" style="text-align: center;">Wins</h4>
                         <div class="card-body">
                             <div class="text-center">
@@ -77,7 +82,7 @@
                         </div>
                     </div>
                     
-                    <div id="Results" class="card" style="width: 225px">
+                    <div id="Results" class="card">
                         <h4 class="card-header" style="text-align: center;">Losses</h4>
                         <div class="card-body">
                             <div class="text-center">
@@ -85,6 +90,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>        
                            
             </div>
@@ -94,23 +100,6 @@
     </div>
 
 </div>
-
-
-
-
-
-
-    <!-- <p id="result"></p> -->
-
-    <!-- <div class="crystals"> -->
-
-    <!-- </div> -->
-
-    <!-- <p id="previous"></p> -->
-
-    <!-- <p id="win"></p> -->
-
-    <!-- <p id="lost"></p> -->
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -133,26 +122,3 @@
 
 
 
-
-
-
-
-
-<!-- * There will be four crystals displayed as buttons on the page. -->
-
-<!-- * The player will be shown a random number at the start of the game. -->
-
-<!-- * When the player clicks on a crystal, it will add a specific amount of points to the player's total score.  -->
-
-  <!-- * Your game will hide this amount until the player clicks a crystal. -->
-  <!-- * When they do click one, update the player's score counter. -->
-
-<!-- * The player wins if their total score matches the random number from the beginning of the game. -->
-
-<!-- * The player loses if their score goes above the random number. -->
-
-<!-- * The game restarts whenever the player wins or loses. -->
-
-  <!-- * When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero. -->
-
-<!-- * The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game. -->
